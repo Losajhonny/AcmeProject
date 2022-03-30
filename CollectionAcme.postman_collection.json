@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "32c9bd2a-a057-42e2-9726-f62f7c252125",
+		"name": "CollectionAcme",
+		"description": "Examen Práctico Devel Systems, S.A.\n\n*   Creación, Modificación y Eliminación de encuestas (Autenticación).\n*   Llenado de encuestas\n*   Obtener resultados (Autenticación)\n    \n\nUna encuesta puede tener 1 a muchos campos, un campo puede tener 1 a muchas respuestas y una encuesta puede tener 1 a muchas respuestas.\n\nEl token de autorización se genera al momento de iniciar sesión.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Create Quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamhvbm55IiwiZXhwIjoxNjQ4NzY0MzY3fQ.5g2uWtmFcp2Siv8882rQ8L9rX5fgaD35k7IVWCF00It5EkOiQXbIyq79hX12okUW_sHDS8nI5eNWQEpCd3mUtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Conferencia Deteccion de Covid\",\r\n    \"description\": \"Tema de redes neuronales\",\r\n    \"userRefId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7137/api/quiz",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Quiz",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamhvbm55IiwiZXhwIjoxNjQ4NzY0MzY3fQ.5g2uWtmFcp2Siv8882rQ8L9rX5fgaD35k7IVWCF00It5EkOiQXbIyq79hX12okUW_sHDS8nI5eNWQEpCd3mUtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7137/api/quiz",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Field",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamhvbm55IiwiZXhwIjoxNjQ4NzY0MzY3fQ.5g2uWtmFcp2Siv8882rQ8L9rX5fgaD35k7IVWCF00It5EkOiQXbIyq79hX12okUW_sHDS8nI5eNWQEpCd3mUtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Comentario conferencia\",\r\n    \"title\": \"Comentario o sugerencia\",\r\n    \"required\": \"N\",\r\n    \"typeField\": \"Texto\",\r\n    \"quizRefId\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7137/api/field",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Field",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamhvbm55IiwiZXhwIjoxNjQ4NzY0MzY3fQ.5g2uWtmFcp2Siv8882rQ8L9rX5fgaD35k7IVWCF00It5EkOiQXbIyq79hX12okUW_sHDS8nI5eNWQEpCd3mUtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7137/api/field",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamhvbm55IiwiZXhwIjoxNjQ4NzY0MzY3fQ.5g2uWtmFcp2Siv8882rQ8L9rX5fgaD35k7IVWCF00It5EkOiQXbIyq79hX12okUW_sHDS8nI5eNWQEpCd3mUtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizId\": 2,\r\n    \"name\": \"Conferencia generación de c3d actualizado\",\r\n    \"description\": \"Tema de generación de código de tres direcciones\",\r\n    \"uniqueId\": \"eb80cc2b-2f6b-43c4-ac0c-f98bda1aeba6\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7137/api/quiz/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"quiz",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamhvbm55IiwiZXhwIjoxNjQ4NzY0MzY3fQ.5g2uWtmFcp2Siv8882rQ8L9rX5fgaD35k7IVWCF00It5EkOiQXbIyq79hX12okUW_sHDS8nI5eNWQEpCd3mUtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7137/api/quiz/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Aquí están los enlaces para consumir el servicio para crear, modificar y eliminar encuestas y campos."
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"jhonny\",\r\n    \"Password\":\"abc123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7137/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"jhonny\",\r\n    \"password\":\"abc123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7137/api/auth/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Aquí están los enlaces para registrar e iniciar sesión."
+		},
+		{
+			"name": "Answer",
+			"item": [
+				{
+					"name": "Get Results",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamhvbm55IiwiZXhwIjoxNjQ4NzY0MzY3fQ.5g2uWtmFcp2Siv8882rQ8L9rX5fgaD35k7IVWCF00It5EkOiQXbIyq79hX12okUW_sHDS8nI5eNWQEpCd3mUtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7137/api/answer",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Answer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizRefId\": 2,\r\n    \"fieldRefId\": 4,\r\n    \"result\": \"Excelente conferencia, debería compartir la presentación\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7137/api/answer",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7137",
+							"path": [
+								"api",
+								"answer"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Aquí están los enlaces para obtener las respuestas y llenar encuestas."
+		}
+	]
+}

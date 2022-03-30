@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "UyV2K9uw/ikgJgADaDE8wtTSMRJfP3o9QsYaqRaI9tY=",
+  "Source": "AcmeBackEnd",
+  "BasePath": "_content/AcmeBackEnd",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
